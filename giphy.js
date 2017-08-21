@@ -42,7 +42,11 @@ $(document).on("click", ".characterButtons", alertCharacterName);
         })
         .done(function(response){
             console.log(response);
-        // $.("")
+            for (var i=0; i<response.data.length;i++){
+                $(".col-xs-8").prepend("<p>Rating: "+response.data[i].rating+"</p>");
+                $(".col-xs-8").prepend("<img src= '"+response.data[i].images.downsized.url+"'>")
+
+            }
         })
 
 
